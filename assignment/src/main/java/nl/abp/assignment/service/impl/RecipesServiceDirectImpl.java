@@ -4,27 +4,28 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 
+import nl.abp.assignment.AssignmentProjectConstant;
 import nl.abp.assignment.dao.RecipesDAO;
 import nl.abp.assignment.dao.derbyImpl.RecipesDAODerbyImpl;
+import nl.abp.assignment.dao.hibernateImpl.RecipesDAOHibernateImpl;
 import nl.abp.assignment.model.RecipeDataBean;
 import nl.abp.assignment.service.RecipesService;
 
 public class RecipesServiceDirectImpl  implements RecipesService{
 	RecipesDAO dao;
 	final static Logger logger=Logger.getLogger(RecipesServiceDirectImpl.class);
-	final String DBTYPE="derby";
 	
 	public RecipesServiceDirectImpl()throws Exception {
 		try
 		{
-			if(DBTYPE.equals("derby"))
+			if(AssignmentProjectConstant.CURRENT_DBTYPE.equals(AssignmentProjectConstant.DERBY_DBTYPE))
 			{	
 				this.dao=new RecipesDAODerbyImpl();
 			}
 			else
 			{
 				//default 
-				this.dao=new RecipesDAODerbyImpl();
+				this.dao=new RecipesDAOHibernateImpl();
 			}
 		}
 		catch(Exception e)

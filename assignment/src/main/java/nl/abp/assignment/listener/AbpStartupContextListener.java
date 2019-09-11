@@ -19,7 +19,7 @@ public class AbpStartupContextListener implements ServletContextListener {
 	
 		try {
 			logger.debug("Inside COntext");
-			DBConnectionManager.getConnectionManager(AssignmentProjectConstant.DBTYPE);
+			DBConnectionManager.getConnectionManager(AssignmentProjectConstant.CURRENT_DBTYPE);
 		} catch (Exception e) {
 			logger.error("Error while creating DB "+e.getMessage());
 		}
@@ -28,7 +28,7 @@ public class AbpStartupContextListener implements ServletContextListener {
 	public void contextDestroyed(ServletContextEvent sce) {
 	
 		try {
-			DBConnectionManager.getConnectionManager(AssignmentProjectConstant.DBTYPE).getConnection().close();
+			DBConnectionManager.getConnectionManager(AssignmentProjectConstant.CURRENT_DBTYPE).getConnection().close();
 		} catch  (Exception e) {
 			logger.error("Error while closing DB "+e.getMessage());
 		}

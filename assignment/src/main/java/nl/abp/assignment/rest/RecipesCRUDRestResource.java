@@ -59,7 +59,6 @@ public class RecipesCRUDRestResource {
 			logger.error("Error while calling RecipesService "+e.getMessage());
 			responseBean.setStatus("ERROR");
 			responseBean.setMessage("Error While Adding Recipe");
-			
 		}
 		try {
 		response=MAPPER.writeValueAsString(responseBean);

@@ -11,6 +11,9 @@ import java.sql.Timestamp;
 
 import org.apache.log4j.Logger;
 
+import nl.abp.assignment.AssignmentProjectConstant;
+import nl.abp.assignment.util.HibernateUtil;
+
 public class DBConnectionManager {
 
 	private  static Connection connection;
@@ -20,13 +23,13 @@ public class DBConnectionManager {
 	 
 	private  DBConnectionManager(String dbType) throws Exception
 	{
-		if(dbType.equalsIgnoreCase("derby"))
+		if(dbType.equalsIgnoreCase(AssignmentProjectConstant.DERBY_DBTYPE))
 		{
 			initDerbyConnection();
 		}
 		else
 		{
-			initDerbyConnection();
+			HibernateUtil.getSessionFactory();
 		}
 	}
 	public static DBConnectionManager getConnectionManager(String dbType)throws Exception

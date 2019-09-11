@@ -23,7 +23,7 @@ public class RecipesDAODerbyImpl implements RecipesDAO {
 	
 	public RecipesDAODerbyImpl() throws Exception {
 	
-		connection=DBConnectionManager.getConnectionManager(AssignmentProjectConstant.DBTYPE).getConnection();
+		connection=DBConnectionManager.getConnectionManager(AssignmentProjectConstant.DERBY_DBTYPE).getConnection();
 	}
 	
 	
