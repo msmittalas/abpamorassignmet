@@ -183,7 +183,7 @@ Select Recipe and Press Manage to View/Delete/Edit
 </div>
 
 <div id="createRecipesDiv">
-create Recipes 
+Add Recipes 
 
 <form action="addRecipe" method="post" id="addRecipeForm">
 <br/>
@@ -214,7 +214,6 @@ create Recipes
   <br/><input value ="Edit" type="button" id="submitEdit" /> 
   <br/><input value ="Delete" type="button" id="submitDelete" /> 
   
-  <br/><input value ="RESET" type="reset" /> 
   
 </form>
  </div>
