@@ -33,6 +33,7 @@ function fillEditForm(data)
 	$("#editRecipeForm #numberOfPeople").val(data.numberOfPeople);
 	$("#editRecipeForm #ingredients").val(data.ingredients);
 	$("#editRecipeForm #instructions").val(data.instructions);
+	$("#editRecipeForm #recipeId").val(data.recipeId);
 
 	
 	$("#editViewRecipe").show();
@@ -83,10 +84,30 @@ $(document).ready(function(){
 	getAllRecipe(restURL);
 	$("#manageRecipe").click(function(){
 		
-		 var selectedVal = $(this).find(':selected').val();
-		    var selectedText = $(this).find(':selected').text();
+		 var selectedVal = $("#listRecipes :selected").val();
+		    var selectedText = $("#listRecipes :selected").text();
 		    getSingleRecipe(selectedVal,restURL);
 		    
+	});
+	
+	$("#submitDelete").click(function(){
+		var id = $("#listRecipes :selected").val();
+		$.ajax(restURL+id,{
+			type:'DELETE',
+			success : function(response,status,xhr){
+				
+				if(response.status.toUpperCase()=="SUCCESS")
+				{
+				getAllRecipe(restURL);
+				$('#message').html("");
+				$('#message').append(' Recipe Deleted ').show().delay(2000).fadeOut();
+				  $('#editViewRecipe').fadeOut();
+										
+				}
+				
+			},
+			error : function(response,status,xhr){}
+		});
 	});
 	
   $("#submitAdd").click(function(){
@@ -100,7 +121,6 @@ $(document).ready(function(){
 			data:jsonData , 
 			success: function (response, status, xhr) {
 				
-				alert(response.status.toUpperCase()=="SUCCESS");
 				if(response.status.toUpperCase()=="SUCCESS")
 					{
 					$('#message').html("");
@@ -117,6 +137,37 @@ $(document).ready(function(){
 	  	);
 	  
   });
+  
+  $("#submitEdit").click(function(){
+		
+	  var recipeObject=$("#editRecipeForm").serializeToJSON({});
+	  var jsonData=JSON.stringify(recipeObject);
+
+	  $.ajax(restURL+"update",{
+		  dataType: 'json',
+          contentType: 'application/json',
+			type: 'PUT',  // http method
+			data:jsonData , 
+			success: function (response, status, xhr) {
+				if(response.status.toUpperCase()=="SUCCESS")
+					{
+					getAllRecipe(restURL);
+					$('#message').html("");
+					$('#message').append(' Recipe Updated ').show().delay(2000).fadeOut();
+					  $('#editViewRecipe').fadeOut();
+											
+					}
+			},
+			error: function (jqXhr, textStatus, errorMessage) {
+					$('#message').append('Error: ' + errorMessage);
+				}	
+	  }
+	  	);
+	  
+  });
+  
+  
+  
 });
 </script>
 </head>
@@ -158,7 +209,11 @@ create Recipes
  <br/>numberOfPeople: <input name="numberOfPeople" type="text" id="numberOfPeople" />
  <br/>ingredients: <input name="ingredients" type="text" id="ingredients" />
   <br/>instructions: <input name="instructions" type="textarea" id="instructions" />
+<input name="recipeId" type="hidden" id="recipeId" />
+  
   <br/><input value ="Edit" type="button" id="submitEdit" /> 
+  <br/><input value ="Delete" type="button" id="submitDelete" /> 
+  
   <br/><input value ="RESET" type="reset" /> 
   
 </form>

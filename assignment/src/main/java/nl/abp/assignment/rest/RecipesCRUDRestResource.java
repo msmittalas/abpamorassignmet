@@ -136,6 +136,7 @@ public class RecipesCRUDRestResource {
 
 	@DELETE
 	@Path("/{id}")
+	@Produces(MediaType.APPLICATION_JSON)
 	public String deleteRecipe(@PathParam("id")Integer id,@HeaderParam("userId")String userId)
 	{
 		String response="";
