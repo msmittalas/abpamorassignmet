@@ -52,7 +52,7 @@ function buildFromResponse(data)
 
 function getAllRecipe(url)
 {
-	$("#listRecipes").hide();
+	$("#recipesDropDown").hide();
 	
 	$.ajax(url+"all",
 			{
@@ -66,7 +66,7 @@ function getAllRecipe(url)
 			{
 				$("#listRecipes").find("option").remove();
 			    $("#listRecipes").append(dataToDisplay);
-			    $("#listRecipes").show();
+			    $("#recipesDropDown").show();
 					
 			}	
 			
@@ -174,7 +174,7 @@ $(document).ready(function(){
 <body>
 <h2>Dashboard</h2>
 <h3 id="message"></h3>
-<div >
+<div id="recipesDropDown">
 Select Recipe and Press Manage to View/Delete/Edit 
 <select id="listRecipes">
 </select>
