@@ -1,0 +1,9 @@
+nl\abp\assignment\dao\RecipesDAO.class
+nl\abp\assignment\util\DateConversion.class
+nl\abp\assignment\AssignmentProjectConstant.class
+nl\abp\assignment\service\RecipesService.class
+nl\abp\assignment\controller\RecipesController.class
+nl\abp\assignment\dao\derbyImpl\RecipesDAODerbyImpl.class
+nl\abp\assignment\model\RecipeDataBean.class
+nl\abp\assignment\service\impl\RecipesServiceDirectImpl.class
+nl\abp\assignment\configurations\DBConnectionManager.class
