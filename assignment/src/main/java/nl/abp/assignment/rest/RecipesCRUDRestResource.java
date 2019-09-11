@@ -142,7 +142,6 @@ public class RecipesCRUDRestResource {
 		String response="";
 		ServiceResponseDataBean responseBean=new ServiceResponseDataBean();
 		try {
-			logger.error("userid"+userId);
 			RecipeDataBean bean=new RecipeDataBean();
 			bean.setRecipeId(id);
 			recipesService.removeRecipe(bean, userId);
