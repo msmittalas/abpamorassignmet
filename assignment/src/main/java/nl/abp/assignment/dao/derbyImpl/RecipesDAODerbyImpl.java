@@ -11,6 +11,7 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 
+import nl.abp.assignment.AssignmentProjectConstant;
 import nl.abp.assignment.configurations.DBConnectionManager;
 import nl.abp.assignment.dao.RecipesDAO;
 import nl.abp.assignment.model.RecipeDataBean;
@@ -18,12 +19,11 @@ import nl.abp.assignment.util.DateConversion;
 
 public class RecipesDAODerbyImpl implements RecipesDAO {
 	final static Logger logger=Logger.getLogger(RecipesDAODerbyImpl.class);
-	final String DBTYPE="derby";
 	Connection connection; 
 	
 	public RecipesDAODerbyImpl() throws Exception {
 	
-		connection=DBConnectionManager.getConnectionManager(DBTYPE).getConnection();
+		connection=DBConnectionManager.getConnectionManager(AssignmentProjectConstant.DBTYPE).getConnection();
 	}
 	
 	
