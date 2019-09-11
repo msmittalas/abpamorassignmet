@@ -12,8 +12,14 @@ import java.sql.Timestamp;
 import org.apache.log4j.Logger;
 
 import nl.abp.assignment.AssignmentProjectConstant;
-import nl.abp.assignment.util.HibernateUtil;
 
+
+/**
+ * DBConnectionManager.java class to create  Derby Connection related objects 
+ * @author MITTAL
+ * 
+ *
+ */
 public class DBConnectionManager {
 
 	private  static Connection connection;
@@ -27,11 +33,16 @@ public class DBConnectionManager {
 		{
 			initDerbyConnection();
 		}
-		else
-		{
-			HibernateUtil.getSessionFactory();
-		}
+//		else
+//		{
+//			HibernateUtil.getSessionFactory();
+//		}
 	}
+	/**static method to return getConnectionManager 
+	 * @param dbType  
+	 * @return
+	 * @throws Exception
+	 */
 	public static DBConnectionManager getConnectionManager(String dbType)throws Exception
 	{
 		if(manager==null)
@@ -41,6 +52,9 @@ public class DBConnectionManager {
 		return manager;
 	}
 	
+	/**this method is use to initialize Derby DB 
+	 * @throws Exception
+	 */
 	private void initDerbyConnection()throws Exception
 	{
 		try {
@@ -52,14 +66,9 @@ public class DBConnectionManager {
 		}
 		catch(Exception e)
 		{
-			//skip this exception if table is already present 
+		logger.error("exception while creating table"+e);
 		}
-//		    // query
-//		    ResultSet rs = stmt.executeQuery("SELECT * FROM recipes");
-//		    // print out query result
-//		    while (rs.next()) { 
-//		      System.out.printf("%d\t%s\n", rs.getInt("recipeId"), rs.getString("createdDate"));
-//		    }
+
 		}
 		catch(ClassNotFoundException classExp)
 		{
@@ -74,6 +83,9 @@ public class DBConnectionManager {
 		
 		  
 	}
+	/** method to get Connection 
+	 * @return connection object 
+	 */
 	public  Connection getConnection() 
 	{
 		return connection;

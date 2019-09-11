@@ -23,6 +23,11 @@ import nl.abp.assignment.model.ServiceResponseDataBean;
 import nl.abp.assignment.service.RecipesService;
 import nl.abp.assignment.service.impl.RecipesServiceDirectImpl;
 
+/**RecipesCRUDRestResource.java EndPoint entry points CRUD Operation REST Entry Point
+ * @author MITTAL
+ * 
+ */
+
 @Path("/recipes")
 public class RecipesCRUDRestResource {
 
@@ -41,9 +46,15 @@ public class RecipesCRUDRestResource {
 		}
 	}
 	
+	/**
+	 * EntryPoint Method to add Recipe , it will call service layer to add the data 
+	 * @param bean  takes RecipeBean data in Json Format 
+	 * @param userId  userId of logged in user  
+	 * @return String  A String version of ServiceResponseDataBean 
+	 * @see ServiceResponseDataBean
+	 */
 	@POST
 	@Path("/add")
-	//@Consumes({MediaType.APPLICATION_JSON})
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
 	public String addRecipes(RecipeDataBean bean,@HeaderParam("userId")String userId)
@@ -69,6 +80,12 @@ public class RecipesCRUDRestResource {
 		}
 		return response;
 	}
+	
+	/**
+	 * EntryPoint Method to return All the recipes from Service layer
+	 * @return String  A String version of ServiceResponseDataBean
+	 * @see ServiceResponseDataBean
+	 */
 	@GET
 	@Path("/all")
 	public String getRecipes()
@@ -98,6 +115,13 @@ public class RecipesCRUDRestResource {
 		
 		return response;
 	}
+	/**EntryPoint Method to return single recipe from Service layer 
+	 * 
+	 * @param id  recipe id 
+	 * @param userId requesting user
+	 * @return JSON format of ServiceResponseDataBean
+	 * @see ServiceResponseDataBean
+	 */
 	@GET
 	@Path("/{id}")
 	public String getRecipe(@PathParam("id")Integer id,@HeaderParam("userId")String userId)
@@ -133,6 +157,12 @@ public class RecipesCRUDRestResource {
 	}
 	
 
+	/** Entrypoint method to delete Recipe  from Service Layer
+	 * @param id  recipeId of Recipe
+	 * @param userId    userId of logged in user  
+	 * @return  A String version of ServiceResponseDataBean
+	 * @see ServiceResponseDataBean
+	 */
 	@DELETE
 	@Path("/{id}")
 	@Produces(MediaType.APPLICATION_JSON)
@@ -163,6 +193,13 @@ public class RecipesCRUDRestResource {
 			}
 			return response;
 	}
+	/**
+	 * EntryPoint Method to update Recipe , it will call service layer to update the data 
+	 * @param bean  takes RecipeBean data in Json Format 
+	 * @param userId  userId of logged in user  
+	 * @return String  A String version of ServiceResponseDataBean 
+	 * @see ServiceResponseDataBean
+	 */
 	@PUT
 	@Path("/update")
 	public String updateRecipe(RecipeDataBean bean,@HeaderParam("userId")String userId)

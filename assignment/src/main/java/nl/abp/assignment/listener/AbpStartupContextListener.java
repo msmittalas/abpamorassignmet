@@ -11,10 +11,21 @@ import nl.abp.assignment.AssignmentProjectConstant;
 import nl.abp.assignment.configurations.DBConnectionManager;
 import nl.abp.assignment.dao.derbyImpl.RecipesDAODerbyImpl;
 
+/**
+ * AbpStartupContextListener.java implements ServletContextListener 
+ * @author MITTAL
+ * 
+ *
+ */
 public class AbpStartupContextListener implements ServletContextListener {
+	
 
 	final static Logger logger=Logger.getLogger(RecipesDAODerbyImpl.class);
 	
+	/**
+	 * method to initialize DB Connection 
+	 *
+	 */
 	public void contextInitialized(ServletContextEvent sce) {
 	
 		try {
@@ -25,6 +36,10 @@ public class AbpStartupContextListener implements ServletContextListener {
 		}
 	}
 
+	/**
+	 * method to close DB Connection 
+	 *
+	 */
 	public void contextDestroyed(ServletContextEvent sce) {
 	
 		try {

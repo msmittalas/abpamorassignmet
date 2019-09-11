@@ -1,5 +1,9 @@
 package nl.abp.assignment;
 
+/**AssignmentProjectConstant.java Constant class 
+ * @author MITTAL
+ *
+ */
 public class AssignmentProjectConstant {
 
 	public final static String CURRENT_DBTYPE="derby";

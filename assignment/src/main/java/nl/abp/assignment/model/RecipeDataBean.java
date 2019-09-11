@@ -13,11 +13,17 @@ import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
+/**
+ * RecipeDataBean.java POJO CLASS , act as data carrier 
+ * @author MITTAL
+ *
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(Include.NON_NULL)
 @Entity
 @Table(name="recipes")
 public class RecipeDataBean implements Serializable {
+	
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

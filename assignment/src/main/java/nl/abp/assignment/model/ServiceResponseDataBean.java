@@ -2,7 +2,13 @@ package nl.abp.assignment.model;
 
 import java.util.List;
 
+/** ServiceResponseDataBean - use to send response of REST requests
+ * @author MITTAL
+ *
+ */
 public class ServiceResponseDataBean {
+	
+	
 
 	private String status;
 	private String message;

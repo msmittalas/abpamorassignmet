@@ -4,6 +4,10 @@ import java.util.List;
 
 import nl.abp.assignment.model.RecipeDataBean;
 
+/**RecipesDAO.java RecipesDAO  interface 
+ * @author MITTAL
+ *
+ */
 public interface RecipesDAO {
 
 	public void insertRecipes(RecipeDataBean bean,String user) throws Exception;

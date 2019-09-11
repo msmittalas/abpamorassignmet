@@ -17,7 +17,12 @@ import nl.abp.assignment.dao.RecipesDAO;
 import nl.abp.assignment.model.RecipeDataBean;
 import nl.abp.assignment.util.DateConversion;
 
+/**RecipesDAODerbyImpl.java Derby implementation of RecipesDAO interface 
+ * @author MITTAL
+ *
+ */
 public class RecipesDAODerbyImpl implements RecipesDAO {
+	
 	final static Logger logger=Logger.getLogger(RecipesDAODerbyImpl.class);
 	Connection connection; 
 	
@@ -32,6 +37,9 @@ public class RecipesDAODerbyImpl implements RecipesDAO {
 	}
 
 
+	/**
+	 *Method to insert Recipe in Derby Database
+	 */
 	public void insertRecipes(RecipeDataBean bean,String user) throws Exception {
 		
 		  try {
@@ -54,6 +62,9 @@ public class RecipesDAODerbyImpl implements RecipesDAO {
 		}
 	}
 
+	/**
+	 *method to remove recipe from Database 
+	 */
 	public void removeRecipes(RecipeDataBean bean,String user) throws Exception {
 		  try {
 			  PreparedStatement prepStmt=connection.prepareStatement("delete from recipes where recipeId=? ");
@@ -67,6 +78,9 @@ public class RecipesDAODerbyImpl implements RecipesDAO {
 		}
 	}
 
+	/**
+	 *method to update Recipe in Database
+	 */
 	public void updateRecipes(RecipeDataBean bean,String user) throws Exception {
 		  try {
 			  PreparedStatement prepStmt=connection.prepareStatement("update  recipes set isVeg=? ,numberOfPeople=?,ingredients=?,instructions=? ,updatedBy=? ,recipeName=?,updatedDate=? where recipeId=? ");
@@ -106,6 +120,12 @@ public class RecipesDAODerbyImpl implements RecipesDAO {
 		return beans;
 	}
 	
+	/**
+	 * method to read the resultset and map it to RecipeDataBean 
+	 * @param rs ResultSet
+	 * @return RecipeDataBean object
+	 * @See RecipeDataBean
+	 */
 	public RecipeDataBean popluateBeanFromResultSet(ResultSet rs)throws SQLException
 	{
 		RecipeDataBean bean=new RecipeDataBean();
@@ -123,7 +143,13 @@ public class RecipesDAODerbyImpl implements RecipesDAO {
 	}
 
 
+	/**
+	 *method to get Recipe Object From Database
+	 *@return RecipeDataBean Object
+	 *@see RecipeDataBean
+	 */
 	public RecipeDataBean getRecipe(RecipeDataBean bean) throws Exception {
+		
 		Statement stmt;
 		try {
 			stmt = connection.createStatement();

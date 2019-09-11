@@ -4,6 +4,11 @@ import java.util.List;
 
 import nl.abp.assignment.model.RecipeDataBean;
 
+/**RecipesService.java defines Service Contract  
+ * @author MITTAL 
+ * 
+ *
+ */
 public interface RecipesService {
 
 	public void addRecipe(RecipeDataBean bean,String userId) throws Exception;
