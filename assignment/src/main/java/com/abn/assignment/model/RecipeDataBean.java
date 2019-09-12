@@ -2,11 +2,6 @@ package com.abn.assignment.model;
 
 import java.io.Serializable;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
 
 import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 
@@ -20,13 +15,9 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(Include.NON_NULL)
-@Entity
-@Table(name="recipes")
 public class RecipeDataBean implements Serializable {
 	
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int recipeId;
 	private String createdDate;
 	private String isVeg;

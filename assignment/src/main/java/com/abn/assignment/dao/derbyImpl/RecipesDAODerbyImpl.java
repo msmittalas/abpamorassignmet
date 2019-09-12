@@ -51,8 +51,7 @@ public class RecipesDAODerbyImpl implements RecipesDAO {
 			  prepStmt.setString(5, bean.getInstructions());
 			  prepStmt.setString(6, user);
 			  prepStmt.setString(7, "");
-			  prepStmt.setString(8, bean.getRecipeName());
-							  
+			  prepStmt.setString(8, bean.getRecipeName());				  
 			  prepStmt.executeUpdate();
 			  
 		} catch (SQLException e) {
@@ -138,7 +137,6 @@ public class RecipesDAODerbyImpl implements RecipesDAO {
 		bean.setRecipeName(rs.getString("recipeName"));
 		bean.setCreatedBy(rs.getString("createdBy"));
 		bean.setUpdatedBy(rs.getString("updatedBy"));
-		
 		return bean;
 	}
 

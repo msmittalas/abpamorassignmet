@@ -34,6 +34,10 @@ public class RecipesServiceDirectImpl  implements RecipesService{
 			throw e;
 		}
 	}
+	public RecipesServiceDirectImpl(RecipesDAO dao){
+		this.dao=dao;
+	}
+	
 	/**
 	 * calls insert method on Dao layer
 	 */
