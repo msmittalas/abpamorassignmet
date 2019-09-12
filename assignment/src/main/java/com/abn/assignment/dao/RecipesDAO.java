@@ -1,8 +1,8 @@
-package nl.abp.assignment.dao;
+package com.abn.assignment.dao;
 
 import java.util.List;
 
-import nl.abp.assignment.model.RecipeDataBean;
+import com.abn.assignment.model.RecipeDataBean;
 
 /**RecipesDAO.java RecipesDAO  interface 
  * @author MITTAL

@@ -1,4 +1,4 @@
-package nl.abp.assignment;
+package com.abn.assignment;
 
 /**AssignmentProjectConstant.java Constant class 
  * @author MITTAL

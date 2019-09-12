@@ -1,4 +1,4 @@
-package nl.abp.assignment.model;
+package com.abn.assignment.model;
 
 import java.io.Serializable;
 

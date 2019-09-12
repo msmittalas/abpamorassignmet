@@ -1,14 +1,14 @@
-package nl.abp.assignment.service.impl;
+package com.abn.assignment.service.impl;
 
 import java.util.List;
 
 import org.apache.log4j.Logger;
 
-import nl.abp.assignment.AssignmentProjectConstant;
-import nl.abp.assignment.dao.RecipesDAO;
-import nl.abp.assignment.dao.derbyImpl.RecipesDAODerbyImpl;
-import nl.abp.assignment.model.RecipeDataBean;
-import nl.abp.assignment.service.RecipesService;
+import com.abn.assignment.AssignmentProjectConstant;
+import com.abn.assignment.dao.RecipesDAO;
+import com.abn.assignment.dao.derbyImpl.RecipesDAODerbyImpl;
+import com.abn.assignment.model.RecipeDataBean;
+import com.abn.assignment.service.RecipesService;
 
 /**RecipesServiceDirectImpl.java implements RecipeService and acts bridge between endpoint and dao class
  * @author MITTAL

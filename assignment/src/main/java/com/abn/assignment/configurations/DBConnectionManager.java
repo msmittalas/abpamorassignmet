@@ -1,4 +1,4 @@
-package nl.abp.assignment.configurations;
+package com.abn.assignment.configurations;
 
 import java.sql.Connection;
 import java.sql.Driver;
@@ -11,7 +11,7 @@ import java.sql.Timestamp;
 
 import org.apache.log4j.Logger;
 
-import nl.abp.assignment.AssignmentProjectConstant;
+import com.abn.assignment.AssignmentProjectConstant;
 
 
 /**

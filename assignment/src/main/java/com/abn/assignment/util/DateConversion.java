@@ -1,4 +1,4 @@
-package nl.abp.assignment.util;
+package com.abn.assignment.util;
 
 import java.sql.Timestamp;
 import java.text.ParseException;

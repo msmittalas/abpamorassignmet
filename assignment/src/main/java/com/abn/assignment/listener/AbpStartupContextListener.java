@@ -1,4 +1,4 @@
-package nl.abp.assignment.listener;
+package com.abn.assignment.listener;
 
 import java.sql.SQLException;
 
@@ -7,9 +7,9 @@ import javax.servlet.ServletContextListener;
 
 import org.apache.log4j.Logger;
 
-import nl.abp.assignment.AssignmentProjectConstant;
-import nl.abp.assignment.configurations.DBConnectionManager;
-import nl.abp.assignment.dao.derbyImpl.RecipesDAODerbyImpl;
+import com.abn.assignment.AssignmentProjectConstant;
+import com.abn.assignment.configurations.DBConnectionManager;
+import com.abn.assignment.dao.derbyImpl.RecipesDAODerbyImpl;
 
 /**
  * AbpStartupContextListener.java implements ServletContextListener 

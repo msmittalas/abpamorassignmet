@@ -1,8 +1,8 @@
-package nl.abp.assignment.service;
+package com.abn.assignment.service;
 
 import java.util.List;
 
-import nl.abp.assignment.model.RecipeDataBean;
+import com.abn.assignment.model.RecipeDataBean;
 
 /**RecipesService.java defines Service Contract  
  * @author MITTAL 

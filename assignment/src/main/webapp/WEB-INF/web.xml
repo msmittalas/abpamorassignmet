@@ -6,14 +6,14 @@
   <display-name>Archetype Created Web Application</display-name>
   
 <listener>
-<listener-class>nl.abp.assignment.listener.AbpStartupContextListener</listener-class>
+<listener-class>com.abn.assignment.listener.AbpStartupContextListener</listener-class>
 </listener>
   <servlet>
 	<servlet-name>jersey-servlet</servlet-name>
 	<servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
 	<init-param>
 		<param-name>com.sun.jersey.config.property.packages</param-name>
-		<param-value>nl.abp.assignment.rest</param-value>
+		<param-value>com.abn.assignment.rest</param-value>
 	</init-param>
 	<init-param>
 		<param-name>com.sun.jersey.api.json.POJOMappingFeature</param-name>
